@@ -52,7 +52,7 @@ Song.all #=> [#<Song: @name="Blank Space">]
 ## Relationships
 
 ### `Song`s and `Artist`s
- * Songs belong to an artist and an artist has many songs. Adding a song to an artist is done by calling an `#add_song` method on an instance of the `Artist` class.
+ * Songs belong to an artist and an artist has many songs. Adding a song to an artist is done by calling an `#add_song` method on an instance of the `Artist` class.  
  * Songs can be initialized with an optional `artist` argument.
 
 ### `Song`s and `Genre`s
