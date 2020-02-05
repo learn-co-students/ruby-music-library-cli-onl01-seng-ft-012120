@@ -20,9 +20,13 @@ class Artist
   @songs
  end
  def add_song(song)
+  binding.pry
   if song.artist == nil
+    binding.pry
     song.artist = self 
+    binding.pry
     self.songs << song
+    binding.pry
   end
  end
 
