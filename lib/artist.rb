@@ -1,34 +1,31 @@
-require_relative 'concerns/my_module.rb'
 class Artist
- extend MyModule::ClassModule
- include MyModule::InstanceModule
+  extend MyModule::ClassModule
+  include MyModule::InstanceModule
+  extend Concerns::Findable
 
- ## It's Weird than I can't make it work from the module ClassModule
- ## to pass the test but in Pry works fine.
- @@all =[]
+  attr_accessor :songs
+  
+  @@all =[]
 
- def self.all 
-   @@all
- end
- ####################################
- def initialize(name)
-  super(name)
-  @songs = []
- end
-
- def songs
-  @songs
- end
- def add_song(song)
-  binding.pry
-  if song.artist == nil
-    binding.pry
-    song.artist = self 
-    binding.pry
-    self.songs << song
-    binding.pry
+  def self.all 
+    @@all
   end
- end
 
+  def initialize(name)
+     super(name)
+     self.songs = []
+  end
+
+  def add_song(song)
+    if song.artist
+      songs << song unless songs.include?(song)
+    else
+      song.artist = self
+    end
+  end
+
+  def genres
+    self.songs.collect{|song| song.genre}.uniq
+  end
 
 end

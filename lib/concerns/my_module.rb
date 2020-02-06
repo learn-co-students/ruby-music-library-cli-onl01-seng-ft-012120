@@ -1,12 +1,6 @@
 module MyModule
 
   module ClassModule
-    #It doesn't pass the test but works properly
-    # @@all=[]
-
-    # def all 
-    #   @@all
-    # end
 
     def destroy_all
       all.clear
@@ -28,6 +22,7 @@ module MyModule
     def save 
       self.class.all << self
     end
+
     
   end
 
