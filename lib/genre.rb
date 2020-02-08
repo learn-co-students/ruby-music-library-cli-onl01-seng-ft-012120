@@ -20,5 +20,11 @@ class Genre
     @@all << self
   end
   
+  def self.create(name)
+    genre = self.new(name)
+    genre.name = name
+    genre
+  end
+  
   
 end
