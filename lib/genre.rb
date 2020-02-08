@@ -5,7 +5,7 @@ class Genre
   
   def initialize(name)
     @name = name
-    @@all << self
+    save
   end
   
   def self.all
@@ -14,6 +14,10 @@ class Genre
   
   def self.destroy_all
     @@all.clear
+  end
+  
+  def save
+    @@all << self
   end
   
   
