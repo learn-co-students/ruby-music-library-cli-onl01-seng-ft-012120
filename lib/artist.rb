@@ -34,6 +34,7 @@ class Artist
   def add_song(song)
     if song.artist
       songs << song unless songs.include?(song)
+      self << song
     else
       song.artist = self
     end
