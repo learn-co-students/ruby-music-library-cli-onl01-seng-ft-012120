@@ -17,11 +17,20 @@ class MusicLibraryController
     puts "What would you like to do?"
     
     input = gets.strip
-    when "exit"
+    
+    case input
+    # when 'list_songs'
+    #   self.list_songs
+
+    when 'exit'
+      
     else
       call
     end
     
   end
+  
+  
+
   
 end
